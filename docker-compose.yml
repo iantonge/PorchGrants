@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  porchgrants:
+    image: ${DOCKER_REGISTRY-}porchgrants
+    build:
+      context: .
+      dockerfile: PorchGrants/Dockerfile
