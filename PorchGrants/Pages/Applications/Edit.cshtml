@@ -1,0 +1,80 @@
+﻿@page
+@model PorchGrants.Pages.Applications.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Application</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Application.ApplicationId" />
+            <div class="form-group">
+                <label asp-for="Application.OrganisationId" class="control-label"></label>
+                <select asp-for="Application.OrganisationId" class="form-control" asp-items="ViewBag.OrganisationId"></select>
+                <span asp-validation-for="Application.OrganisationId" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Application.HasCriteria" /> @Html.DisplayNameFor(model => model.Application.HasCriteria)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Application.ApplyByDate" class="control-label"></label>
+                <input asp-for="Application.ApplyByDate" class="form-control" />
+                <span asp-validation-for="Application.ApplyByDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Application.AppliedDate" class="control-label"></label>
+                <input asp-for="Application.AppliedDate" class="form-control" />
+                <span asp-validation-for="Application.AppliedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Application.AmountRequested" class="control-label"></label>
+                <input asp-for="Application.AmountRequested" class="form-control" />
+                <span asp-validation-for="Application.AmountRequested" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Application.FollowUpDate" class="control-label"></label>
+                <input asp-for="Application.FollowUpDate" class="form-control" />
+                <span asp-validation-for="Application.FollowUpDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Application.Outcome" class="control-label"></label>
+                <input asp-for="Application.Outcome" class="form-control" />
+                <span asp-validation-for="Application.Outcome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Application.OutcomeDate" class="control-label"></label>
+                <input asp-for="Application.OutcomeDate" class="form-control" />
+                <span asp-validation-for="Application.OutcomeDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Application.CreatedDate" class="control-label"></label>
+                <input asp-for="Application.CreatedDate" class="form-control" />
+                <span asp-validation-for="Application.CreatedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Application.LastUpdated" class="control-label"></label>
+                <input asp-for="Application.LastUpdated" class="form-control" />
+                <span asp-validation-for="Application.LastUpdated" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

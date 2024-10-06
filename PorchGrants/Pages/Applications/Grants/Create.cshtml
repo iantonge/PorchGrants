@@ -1,0 +1,78 @@
+﻿@page
+@model PorchGrants.Pages.Applications.Grants.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Grant</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Grant.ApplicationId" class="control-label"></label>
+                <select asp-for="Grant.ApplicationId" class ="form-control" asp-items="ViewBag.ApplicationId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Grant.AmountAwarded" class="control-label"></label>
+                <input asp-for="Grant.AmountAwarded" class="form-control" />
+                <span asp-validation-for="Grant.AmountAwarded" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Grant.NumberOfInstallments" class="control-label"></label>
+                <input asp-for="Grant.NumberOfInstallments" class="form-control" />
+                <span asp-validation-for="Grant.NumberOfInstallments" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Grant.ReportToDonorRequired" /> @Html.DisplayNameFor(model => model.Grant.ReportToDonorRequired)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Grant.ReportPrepDate" class="control-label"></label>
+                <input asp-for="Grant.ReportPrepDate" class="form-control" />
+                <span asp-validation-for="Grant.ReportPrepDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Grant.ReportSentDate" class="control-label"></label>
+                <input asp-for="Grant.ReportSentDate" class="form-control" />
+                <span asp-validation-for="Grant.ReportSentDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Grant.Notes" class="control-label"></label>
+                <input asp-for="Grant.Notes" class="form-control" />
+                <span asp-validation-for="Grant.Notes" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Grant.FullyReveived" /> @Html.DisplayNameFor(model => model.Grant.FullyReveived)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Grant.CreatedDate" class="control-label"></label>
+                <input asp-for="Grant.CreatedDate" class="form-control" />
+                <span asp-validation-for="Grant.CreatedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Grant.LastUpdatedDate" class="control-label"></label>
+                <input asp-for="Grant.LastUpdatedDate" class="form-control" />
+                <span asp-validation-for="Grant.LastUpdatedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

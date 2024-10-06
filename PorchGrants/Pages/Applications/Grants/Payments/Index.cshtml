@@ -1,0 +1,66 @@
+﻿@page
+@model PorchGrants.Pages.Applications.Grants.Payments.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Payment[0].ExpectedAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Payment[0].DueDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Payment[0].RecievedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Payment[0].ReceivedAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Payment[0].Version)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Payment[0].Grant)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Payment) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExpectedAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DueDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RecievedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReceivedAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Version)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Grant.GrantId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.PaymentId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.PaymentId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.PaymentId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

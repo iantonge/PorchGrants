@@ -1,0 +1,108 @@
+﻿@page
+@model PorchGrants.Pages.Organisations.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Organisation[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Organisation[0].Address1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Organisation[0].Address2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Organisation[0].Address3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Organisation[0].Postcode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Organisation[0].Website)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Organisation[0].ContactName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Organisation[0].ContactEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Organisation[0].ContactPhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Organisation[0].ContactMobile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Organisation[0].Notes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Organisation[0].Archived)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Organisation[0].Version)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Organisation) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Postcode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Website)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactMobile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Archived)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Version)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.OrganisationId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.OrganisationId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.OrganisationId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,96 @@
+﻿@page
+@model PorchGrants.Pages.Applications.Grants.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Grant[0].AmountAwarded)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Grant[0].NumberOfInstallments)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Grant[0].ReportToDonorRequired)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Grant[0].ReportPrepDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Grant[0].ReportSentDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Grant[0].Notes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Grant[0].FullyReveived)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Grant[0].CreatedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Grant[0].LastUpdatedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Grant[0].Version)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Grant[0].Application)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Grant) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AmountAwarded)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberOfInstallments)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReportToDonorRequired)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReportPrepDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReportSentDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullyReveived)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastUpdatedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Version)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Application.ApplicationId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.GrantId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.GrantId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.GrantId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,90 @@
+﻿@page
+@model PorchGrants.Pages.Organisations.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Organisation</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Organisation.OrganisationId" />
+            <div class="form-group">
+                <label asp-for="Organisation.Name" class="control-label"></label>
+                <input asp-for="Organisation.Name" class="form-control" />
+                <span asp-validation-for="Organisation.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Organisation.Address1" class="control-label"></label>
+                <input asp-for="Organisation.Address1" class="form-control" />
+                <span asp-validation-for="Organisation.Address1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Organisation.Address2" class="control-label"></label>
+                <input asp-for="Organisation.Address2" class="form-control" />
+                <span asp-validation-for="Organisation.Address2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Organisation.Address3" class="control-label"></label>
+                <input asp-for="Organisation.Address3" class="form-control" />
+                <span asp-validation-for="Organisation.Address3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Organisation.Postcode" class="control-label"></label>
+                <input asp-for="Organisation.Postcode" class="form-control" />
+                <span asp-validation-for="Organisation.Postcode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Organisation.Website" class="control-label"></label>
+                <input asp-for="Organisation.Website" class="form-control" />
+                <span asp-validation-for="Organisation.Website" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Organisation.ContactName" class="control-label"></label>
+                <input asp-for="Organisation.ContactName" class="form-control" />
+                <span asp-validation-for="Organisation.ContactName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Organisation.ContactEmail" class="control-label"></label>
+                <input asp-for="Organisation.ContactEmail" class="form-control" />
+                <span asp-validation-for="Organisation.ContactEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Organisation.ContactPhone" class="control-label"></label>
+                <input asp-for="Organisation.ContactPhone" class="form-control" />
+                <span asp-validation-for="Organisation.ContactPhone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Organisation.ContactMobile" class="control-label"></label>
+                <input asp-for="Organisation.ContactMobile" class="form-control" />
+                <span asp-validation-for="Organisation.ContactMobile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Organisation.Notes" class="control-label"></label>
+                <input asp-for="Organisation.Notes" class="form-control" />
+                <span asp-validation-for="Organisation.Notes" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Organisation.Archived" /> @Html.DisplayNameFor(model => model.Organisation.Archived)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
