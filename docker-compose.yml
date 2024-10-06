@@ -17,3 +17,4 @@ services:
       - "5432:5432"
     volumes:
       - ./Postgres/Data:/var/lib/postgresql/data
+      - ./Postgres/init-local-db.sql:/docker-entrypoint-initdb.d/init-local-db.sql
